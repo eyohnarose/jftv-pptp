@@ -37,6 +37,9 @@ function InstUpdates(){
 
  # Installing all required packages to install Webmin
  apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python dbus libxml-parser-perl -y
+ # Update SSL Libraries
+ sudo update-ca-certificates --fresh
+ export SSL_CERT_DIR=/etc/ssl/certs
 }
 
 function InstPPTP(){
