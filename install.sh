@@ -165,8 +165,8 @@ echo 'echo -e "     ========================================================="' 
 echo 'echo -e "     *     Type \033[1;32mmenu\033[0m to enter commands      *"' >> .bashrc
 echo 'echo -e "     ========================================================="' >> .bashrc
 echo 'echo -e ""' >> .bashrc
-echo 'echo -e "iptables -t nat -A POSTROUTING -s 172.16.0.0/24 -o ens3 -j MASQUERADE""' >> .bashrc
-echo 'echo -e "iptables -A FORWARD -p tcp --syn -s 172.16.0.0/24 -j TCPMSS --set-mss 1356""' >> .bashrc
+echo 'iptables -t nat -A POSTROUTING -s 172.16.0.0/24 -o ens3 -j MASQUERADE' >> .bashrc
+echo 'iptables -A FORWARD -p tcp --syn -s 172.16.0.0/24 -j TCPMSS --set-mss 1356' >> .bashrc
 
  
  # Showing script's banner message
