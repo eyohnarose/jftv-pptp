@@ -37,7 +37,11 @@ function InstUpdates(){
 
  # Installing all required packages to install Webmin
  apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python dbus libxml-parser-perl -y
-
+ # Allow IPv4 Forwarding
+ sed -i '/net.ipv4.ip_forward.*/d' /etc/sysctl.conf
+ sed -i '/net.ipv4.ip_forward.*/d' /etc/sysctl.d/*.conf
+ sysctl -p
+ sysctl --system &> /dev/null
 }
 
 function InstPPTP(){
